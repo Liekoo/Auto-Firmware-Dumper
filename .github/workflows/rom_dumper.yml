@@ -57,7 +57,7 @@ jobs:
       run: |
         sudo apt update \
         && sudo apt -y upgrade \
-        && sudo apt -y install cpio aria2 git python3 neofetch tar gzip
+        && sudo apt -y install cpio aria2 git python3 neofetch tar gzip p7zip-full
 
     - name: Setup GithubCLI
       run: |
@@ -221,7 +221,7 @@ jobs:
         echo "Clonning LineageOS tools..."
         git clone --depth=1 https://github.com/LineageOS/android_tools_extract-utils -b lineage-20.0 ./android/tools/extract-utils
         echo "Done cloning extract-utils."
-        git clone --depth=1  https://github.com/LineageOS/android_prebuilts_extract-tools -b lineage-20.0 ./android/prebuilts/extract-tools
+        git clone --depth=1 https://github.com/LineageOS/android_prebuilts_extract-tools -b lineage-20.0 ./android/prebuilts/extract-tools
         echo "Done cloning extract-tools."
         sudo chmod 777 android/device/"$brand"/"$codename"/setup-makefiles.sh
         cd android/device/"$brand"/"$codename"
